@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>
+            FORMS
+        </title>
+        <style type="text/css">
+        input[type=text], input[type=password],input[type=email]{
+            border: 1px solid gold;
+            border-radius: 4px;
+            height: 25px;
+        }
+        input[type="submit"]{
+            background: skyblue;
+        }
+        fieldset{
+            border-color: blue;
+            border:1px solid;
+            border-radius: 3.5px;
+            margin:10 10 0 10px;
+            width: 40%;
+            float: left;
+        }
+        fieldset legend{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            color: #9e4776;
+        }
+        label{
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        nav ul li a {
+            text-decoration: none;
+        }
+        nav ul li a:hover{
+            color:springgreen;
+        }
+        nav ul li a:visited{
+            color:gray;
+        }
+        </style>
+    </head>
+    <body>
+            <div>
+                    <section>
+                        <nav>
+                            <ul>
+                            <li> <a href="">Home</a> </li>
+                            <li><a href="">about us</a></li>
+                            <li> <a href="www.google.com" target="blank">contact us</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
+        <fieldset><legend>User details</legend>
+        <form method="POST" action="">
+        <table>
+        <thead>
+                <tr>
+                <th colspan="2">
+                    user details
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    <label>First Name</label>
+                </th>
+                <td><input type="text" name="fname" placeholder="Firstname"/></td>
+            </tr>
+            <tr><th>
+                    <label>Email</label>
+                </th>
+                <td><input type="email" name="lname" placeholder="username@email.com"></td></tr>
+            <tr>
+             <tr><th>
+                  <label>password</label>
+                </th>
+                <td><input type="password" name="lname" placeholder="username@email.com"></td></tr>
+             <tr>
+                <th>Phone</th>
+                <td><input type="number" placeholder="Mobile number" min="5" max="20"></td>
+            </tr>
+            <tr>
+                    <th>
+                        <label for="dob">Date of Birth</label>
+                    </th>
+                    <td><input type="date" name="dob" /></td>
+                </tr>
+            <tr>
+            <tr>
+                <th>
+                     <label for="dob">Date & time of Birth</label>
+                 </th>
+                    <td><input type="datetime" name="dob" /></td>
+             </tr>
+
+            <tr>
+                 <th>
+                     <label>time</label>
+                </th>
+                    <td><input type="time" name="time" /></td>
+                        </tr>
+                    <tr>
+                <td colspan="2"><input type="submit" value="Save" name="Save" formaction=""></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><sub>Create/ Edit user</sub></td>
+            </tr>
+        </tfoot>
+        </table>
+        </form>
+        </fieldset>
+        <fieldset>
+            <legend>fields</legend>
+            <em>Hello</em>
+            <bdo dir="rtl">hello how are you</bdo>
+            <br>
+            <hr>
+            It is an interesting world with every man who is rich
+            <blockquote>The poor dies , who cares </blockquote>
+            <code>
+                int i=10;<br />
+                int j=20;<br />
+                for(int i=0; i &gt; 3 ;i++){ <br />
+                  &nbsp;  System.out.println("Hello");<br />
+                }
+            </code>
+            <br/>
+            <hr/>
+        </fieldset>
+        <div>
+            <section>
+                <nav>
+
+                </nav>
+            </section>
+        </div>
+    </body>
+</html>
