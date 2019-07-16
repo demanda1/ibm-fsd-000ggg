@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+       <script src="hellojquery.js" type="text/javascript"></script>
+       <script>
+         $(document).ready(()=>{
+             console.log('jquery onload/ready call')
+
+             $('#save').click(()=>{
+               let email= $('#email').val();
+               console.log(`Email is :${email}`);
+               alert(`Email is:${email}`)
+               $('#email').val('deepakm8796@gmail.com');
+               //set focus iwthin textbox
+               $('email').focus();
+             })
+
+             //acces by css class
+             $('div.update').click(()=>{
+                $('#email').val("deepakmandal@gail.com")
+             })
+             $('div#reset').click(()=>{
+                 $("#email").val("")
+             })
+             $('div').click(()=>{
+                 console.log("div called")
+                 $('#email').val("mmm@g.c")
+             })
+
+             $('#submit').click(()=>{
+                 fname=$('#fname').val();
+                 lname=$('#lname').val();
+                 email=$('#email').val();
+                 data=`Hii ${fname} ${lname}, your email id is : ${email}`
+                 alert(`${data}`)
+             })
+             $('#content').html("<span class='myspan'><b>Hello Jquery</b></span>")
+             $('.myspan').on('click',()=>{
+                 $('#text').text("Hello world")
+                 console.log('span called')
+             })
+
+             $('#btn-emp').click(()=>{
+                 $('#frm-emp').slideToggle(1000)
+             })
+             $('#mypage').hide()
+             $('#mypage2').hide()
+             $('#login').on('click',()=>{
+                 $('#mypage').show()
+                 $('#mypage2').hide()
+             })
+             $('#signup').on('click',()=>{
+                $('#mypage2').show()
+                 $('#mypage').hide()
+             })
+             $('#email').addClass()
+             $(':text').one('click',()=>{
+                 $(':text').val('Hello Text field')
+             })
+             $(":text").click(()=>{
+                $(":text#lname").css({
+                    'background-color':'red'
+                })
+             })
+         })
+       </script>
+    </head>
+    <body>
+        
+        <div>
+        <input type="text" id="fname" placeholder="firstname">
+
+        <input type="text" id="lname" placeholder="lastname">
+        <input type="text" id="email">
+        <input type="password" id="password">
+        <input type="submit" id="submit" value="submit">
+        <input type="button" name="save" id="save" value="save">
+        <input type="button" name="save" class="update" value="update">
+        </div>
+        <div class="update">
+            Hello how are you doing....
+            Hello how are you doing....
+            Hello how are you doing....
+            Hello how are you doing....
+        </div>
+        <div id="reset">
+            Reset the email
+        </div>
+
+        <div id="content">
+
+        </div>
+        <div id="text">
+
+        </div>
+        <input type="button" id="btn-emp" value="toggle">
+        <fieldset id="frm-emp">
+            Emai:<input type="text">
+            password: <input type="password">
+        </fieldset>
+
+        <input type="button" id="login" value="login">
+        <input type="button" id="signup" value="signup">
+        <div id="mypage">
+                <fieldset><legend>Login</legend>
+                    <input type="username" id="uname" placeholder="username">
+                    <input type="password" id="pword" placeholder="password">
+                    <input type="button" value="login" id="login">
+                </fieldset>
+        </div>
+        <div id="mypage2">
+                <fieldset><legend>Signup</legend>
+                    <input type="text" id="fname" placeholder="firstname">
+                    <input type="text" id="lname" placeholder="lastname">
+                    <input type="username" id="uname" placeholder="username">
+                    <input type="password" id="pword" placeholder="password">
+                    <input type="button" value="signup" id="signup">
+                </fieldset>
+        </div>
+        <!--<iframe src="login.html" frameborder="0"></iframe>-->
+        
+
+    </body>
+</html>

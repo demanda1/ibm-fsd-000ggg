@@ -1,0 +1,54 @@
+<html>
+    <head>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js" type="text/javascript"></script>s
+            <script>
+                $(document).ready(()=>{
+                    
+                    
+                        $('#frm').validate({
+                            rules:{
+                                lname:'required',
+                                fname:'required',
+                                uname:'required', 
+                                phone: {
+                               required : true,
+                               min : 100,
+                               max: 1000
+                                  },
+                                password:'required',
+                                email:true
+                        },
+
+                            messages:{
+                                lname : 'Name cannot be left blank',
+                                fname:'Full name cannot be blank',
+                phone: {
+                    required : 'Phone cannot be left blank',
+                    min : 'Phone cannot be less than 100',
+                    max: 'Phone cannot be greater than 1000'
+                },
+                email: 'Invalid Email your@email.com'
+                            }
+                        
+                })
+                    
+            })
+            
+            
+            </script>
+    </head>
+    <body>
+        <fieldset><legend>Signup</legend>
+            <form action="" id="frm">
+            <input type="text"  name="fname" placeholder="firstname">
+            <input type="text"  name="lname" placeholder="lastname">
+            <input type="username" id="uname" name="uname" placeholder="username">
+            <input type="number" name="phone" id="phone" placeholder="phone">
+            <input type="text" name="email">
+            <input type="password" name="password" id="pword" placeholder="password">
+            <input type="submit" value="signup" id="signup">
+            </form>
+        </fieldset>
+    </body>
+</html>

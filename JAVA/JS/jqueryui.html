@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title> Jquery Validation</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" href="jquery-ui-theme.css" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" integrity="sha256-p6xU9YulB7E2Ic62/PX+h59ayb3PBJ0WFTEQxq0EjHw=" crossorigin="anonymous" />
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.min.css" integrity="sha256-eZniZ8LGwFHGy3Dndt7l7eKikb8Dg+d2e1AvTP5NWPg=" crossorigin="anonymous" />-->
+    <script type="text/javascript">
+    $(document).ready(()=>{
+        $("#register").click(()=>{
+            user=$("#user").val();
+            pass=$("#pass").val();
+            uemail=$("#email").val();
+            console.log(user)
+            console.log(pass)
+           let data=`{"uname":"${user}","upass":"${pass}","email":"${uemail}"}`
+            localStorage.setItem(`${user}`,`${data}`)
+        })
+
+        $("#login").click(()=>{
+           uname=$("#username").val();
+           upass=$("#password").val();
+           Object.keys(localStorage).forEach((e)=>{
+               let log=JSON.parse(localStorage.getItem(e))
+               console.log(uname)
+               if((log.uname==uname)&&(log.upass==upass)){
+                   document.location="newpage.html"
+                 }
+
+           })
+       })
+
+       $('#save').button();
+       // radio buttons
+       //$('#gender').checkboxradio();
+       //$('#languages').radio();
+       $('#tabs').tabs({
+           // specify default selected tab
+           active: 0
+       });
+    
+       //end of ready function
+    });
+    </script>
+    <style>
+    /* Clearfix for the menu */
+/*.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: auto;
+} */
+    </style>
+    </head>
+    <body>
+        <header>
+    <div id="tabs">
+        <ul>
+            <li><a href="#logins">Login</a></li>
+            <li><a href="#registers">Register</a></li>
+        </ul>
+        <div id="logins">
+            <input type="text" id="username" placeholder="username" />
+            <input type="password" id="password" placeholder="password">
+            <input type="button" id="login" value="Login">
+        </div>
+        <div id="registers">
+            <input type="text" id="user" placeholder="username" />
+            <input type="password" id="pass" placeholder="password"/>
+            <input type="email" id="email" placeholder="email">
+            <input type="button" id="register" value="register">
+        </div>
+    </div>
+    </header>
+</body>
+</html>

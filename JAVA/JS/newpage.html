@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title> Jquery Validation</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" href="jquery-ui-theme.css" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" integrity="sha256-p6xU9YulB7E2Ic62/PX+h59ayb3PBJ0WFTEQxq0EjHw=" crossorigin="anonymous" />
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.min.css" integrity="sha256-eZniZ8LGwFHGy3Dndt7l7eKikb8Dg+d2e1AvTP5NWPg=" crossorigin="anonymous" />-->
+    <script type="text/javascript">
+    $(document).ready(()=>{
+        $("#timetable").hide()
+        $("#tt").click(()=>{
+            $("#timetable").show()
+        })
+
+        $("#signout").click(()=>{
+           document.location="jqueryui.html"
+       })
+
+       $('#save').button();
+       // radio buttons
+       //$('#gender').checkboxradio();
+       //$('#languages').radio();
+       $('#tabs').tabs({
+           // specif default selected tab
+           active: 2
+       });
+       let _user=[]
+       Object.keys(localStorage).forEach((e)=>{
+           let users=JSON.parse(localStorage.getItem(e));
+           _user.push(users.uname)
+       })
+
+       $("#search").autocomplete({
+           source:_user
+       })
+
+       $("#details").hide();
+
+       $("#find").click(()=>{
+           let name=$("#search").val();
+           console.log(name)
+           Object.keys(localStorage).forEach((e)=>{
+               let user=JSON.parse(localStorage.getItem(e))
+               console.log(user)
+               if(user.uname==name){
+                   console.log("entered")
+                    $("#userdet").val(`${name}`)
+                    $("#useremail").val(`${user.email}`)
+               }
+           })
+           $("#details").show();
+       })
+       //end of ready function
+    });
+    </script>
+    <style>
+    /* Clearfix for the menu */
+/*.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: auto;
+} */
+    </style>
+    </head>
+    <body>
+        <header>
+    <div id="tabs">
+        <ul>
+            <li><a href="#logouts" id="logout">Logout</a></li>
+            <li><a href="#timetable" id="tt">Timetable</a></li>
+            <li><input type="text" id="search"></li>
+            <li><input type="button" value="find details" id="find" style="background-color: dodgerblue"></li>
+        </ul>
+    <div id="logouts">
+        <input type="button" value="logout" id="signout">
+    </div>
+    <div id="timetable">
+    <iframe src="timetable2.html" frameborder="0" width="1000px" height="600px"></iframe>
+    </div>
+    <div id="details">
+        <input type="text" id="userdet">
+        <input type="text" id="useremail">
+    </div>
+    </div>
+    </header>
+
+</body>
+</html>

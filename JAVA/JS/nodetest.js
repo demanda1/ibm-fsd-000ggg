@@ -1,0 +1,9 @@
+const calc=require('./hellonode')
+const obj=new calc.Calculator();
+let first=parseInt(process.argv[2] || '5')
+let second=parseInt(process.argv[3] || '7')
+console.log("sum="+obj.add(first,second))
+console.log("difference="+obj.sub(first,second))
+console.log("product="+obj.mul(first,second))
+console.log("division="+obj.div(first,second))
+console.log("modulus="+obj.mod(first,second))

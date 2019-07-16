@@ -1,0 +1,41 @@
+<html>
+    <head>
+            <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+
+        <script>
+           $(document).ready(()=>{
+
+            $("register").click(()=>{
+               fname=$("#fname").val();
+               lname=$("#lname").val();
+               uname=$("#uname").val();
+               pass=$("#password").val();
+
+               data=`{"uname":"${uname}","pass":"${pass}"}`
+               localStorage.setItem(`${uname}`,`${data}`);
+               console.log(data);
+            })
+           })   
+        </script>
+    </head>
+    <body>
+        <div>
+            
+        </div>
+        <div style="display:inline-block">
+            <div>
+                <input type="text" id="fname">
+                <input type="text" id="lname">
+                <input type="text" id="uname">
+                <input type="password" id="password">
+                <input type="button" value="register" id="register">
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </body>
+</html>
