@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+        <script>
+        function calculate(){
+            num1=parseInt(document.getElementById("num1").value)
+            num2=parseInt(document.getElementById("num2").value)
+            op=document.getElementById("operand").value
+            url=`http://localhost:8080/index/${num1}/${num2}/${op}`;
+            fetch(url).then(res=>res.json()).then((res)=>{
+                    console.log(res)
+                    console.log(res.result)
+                    document.getElementById("result").value=res.result
+                
+            })
+        }
+            
+        </script>
+
+    </head>
+    <body>
+        <input type="number" id="num1" placeholder="enter number1">
+        <input type="number" id="num2" placeholder="enter number2">
+        <input type="text" id="operand" placeholder="enter operand">
+        <input type="text" id="result">
+        <input type="button" value="Calculate" id="calc" onclick="calculate()">
+    </body>
+</html>

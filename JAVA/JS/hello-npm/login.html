@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+           const login=()=>{
+               const user = document.getElementById('user').value;
+               const pass= document.getElementById('pass').value;
+               const _url=`http://localhost:8080/login?user=${user}&pass=${pass}`;
+               fetch(_url).then(res=>res.json()).then((res)=>{
+                   if(res.id!=null){
+                       document.location='Home.html'
+                   }
+                   else{
+                       document.getElementById('login-error').innerText='Invalid Login Credentials';
+                   }
+                   console.log(res);
+               })
+           }
+        </script>
+        <style>
+            input {
+                display: block;
+                margin-bottom: 5px;
+            }
+            </style>
+    </head>
+    <body>
+        <input type="text" id="user">
+        <input type="text" id="pass">
+        <input type="button" onclick="login()">
+        <span id="login-error" style="color:red"></span>
+    </body>
+</html>

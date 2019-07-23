@@ -1,0 +1,33 @@
+const users=[
+    {
+        id:1,
+        name:'john',
+        email:'john@hmail.com',
+        uname:'john11',
+        pass:'john123'
+    },
+    {
+        id:2,
+        name:'bob',
+        email:'bob@gmail.com',
+        uname:'bob11',
+        pass:'bob123'
+    },
+    {
+        id:3,
+        name:'adam',
+        email:'adam@gmail.com',
+        uname:'adam11',
+        pass:'adam123'
+    },
+    {
+        id:4,
+        name:'admin',
+        email:'admin@gmail.com',
+        uname:'admin11',
+        pass:'admin123'
+    }
+]
+module.exports={
+    users
+}
